@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div class="btns">
-		<div class="checkbox"><span tapmode="opacity" onclick="fnCheckbox(this)" class="ic-checkbox">已完成上述操作</span></div>
+		<div class="checkbox"><span tapmode="opacity" class="ic-checkbox">已完成上述操作</span></div>
 		<div tapmode="opacity" onclick="fnNext();" class="submit">下一步</div>
 	</div>
 </body>
@@ -36,6 +36,8 @@
 <script type="text/javascript">
 	apiready = function () {
 		// $api.dom('.selectType').innerHTML = api.pageParam.selectText;
+		var checkbox = $api.dom('.checkbox');
+		fnCheckbox(checkbox);
 	}
 
 	function fnNext() {
