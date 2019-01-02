@@ -12,16 +12,22 @@
         /* //设置白色背景 */
         /* // 设置列表和列表项的统一 */
         body, ul, li{  margin: 0px;  padding: 0px; }
-        ul { list-style: none;  background-color: white;  margin-top: 30px;
-            border-top: 1px solid #ddd;  border-bottom: 1px solid #ddd; }
-        ul li { margin-left: 5%; border-bottom: 1px solid #ddd;}
-        ul li { padding-top:10px; padding-bottom: 10px; }
+        ul { list-style: none;  background-color: white;  margin-top: 30px;}
+        ul li {border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-top:10px; padding-bottom: 10px;}
+        
         ul li :last-child { border-bottom: 0px; }
-        ul li .ios7CBox:after { width: 18px;  height: 18px;
-            top: 3px; }
+        ul li .ios7CBox:after {width: 18px; height: 18px; top: 3px;}
         ul li .ios7CBox {  display: table-cell;  vertical-align: middle; 
             height: 24px;  width: 40px; }
-        .gos_rightBlock {  float: right;  margin-right: 5%; }
+        #LEDID{
+            position:absolute;
+            width: 100%;
+            top:30px;
+            background-color:#fff;
+            height:50px;
+            font-size: 20px;
+            /* text-align:center; */
+        }
         .gos_readonly { color: darkGray; }
         .gos_slideCellBottom { margin:3px 0; }
         .gos_slideMin { width: 12%;text-align: center;float: left; }
@@ -59,13 +65,18 @@
 
 <body>
     <ul>
-        <li>
-            <span>LED</span>
-            <span class="gos_rightBlock gos_LEDBlock">
-                <input class="ios7CBox gos_LED" type="button">
-            </span>
+        <li>智能灯开关状态：
+            <span>关</span>
         </li>
     </ul>
+    <div class="gos_LEDBlock" align="center" style="margin-top:40%">
+        <!-- <img src="../../image/switch-OFF.png" style="width:150px; height:150px;"> -->
+        <input class="ios7CBox gos_LED" type="image" src="../../image/switch-OFF.png" style="width:150px; height:150px;">
+    </div>
+    <!-- <span >
+                <input type="image" src="../../image/switch-OFF.png">
+            </span> -->
+
 </body>
 <script type="text/javascript" src="../../script/api.js"></script>
 <script type="text/javascript" src="../../script/jquery.js"></script>
