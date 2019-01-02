@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<widget id="A6099903398810" version="0.0.1">
+<!-- <widget id="A6099903398810" version="0.0.1"> -->
+<widget id="A6091780865464" version="0.0.1">
   <name>*GokitDemo</name>
   <description>Open source code for gizWifiSDK</description>
   <author email="club@gizwits.com" href="http://www.gizwits.com">Developer</author>
