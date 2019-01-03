@@ -24,11 +24,14 @@
 		<div class="img-connection">
 			<img src="../../image/airlink.gif" />
 		</div>
-		<div class="bg-connection-status">接通电源，长按【KEY2】直到【RGB LED】亮绿灯
+		<div class="bg-connection-status">
+			<p>1. 新设备入手，接通电源可以直接配置入网</p>
+			<p>2. 修改网络时，需要长按KEY1按键</p>
+			<p>3. 配置、修改网络时，请确认路由器已连接外网</p>
 		</div>
 	</div>
 	<div class="btns">
-		<div class="checkbox"><span tapmode="opacity" class="ic-checkbox">已完成上述操作</span></div>
+		<div class="checkbox"><span tapmode="opacity" onclick="fnCheckbox(this)" class="ic-checkbox">已完成上述操作</span></div>
 		<div tapmode="opacity" onclick="fnNext();" class="submit">下一步</div>
 	</div>
 </body>
@@ -37,8 +40,6 @@
 <script type="text/javascript">
 	apiready = function () {
 		// $api.dom('.selectType').innerHTML = api.pageParam.selectText;
-		var checkbox = $api.dom('.checkbox');
-		fnCheckbox(checkbox);
 	}
 
 	function fnNext() {
