@@ -66,7 +66,7 @@
 <body>
     <ul>
         <li>智能灯开关状态：
-            <span>关</span>
+            <span class="test">关</span>
         </li>
     </ul>
     <div class="gos_LEDBlock" align="center" style="margin-top:40%">
@@ -512,6 +512,7 @@
         if (value) {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked") == false) {
                 $api.addCls(blockEl.querySelector(buttonClsName), "checked");
+                $api.removeCls('span','test');
             }
         } else {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked")) {
