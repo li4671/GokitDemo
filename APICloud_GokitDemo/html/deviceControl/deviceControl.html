@@ -490,12 +490,13 @@
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
-            switchImg.src = '../../image/switch-OFF.png';
-
+            switchImg.src = '../../image/switch-ON.png';
+            TextSpan.innerHTML = '开';
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
-            switchImg.src = '../../image/switch-ON.png';
+            switchImg.src = '../../image/switch-OFF.png';
+            TextSpan.innerHTML = '关';
         }
     }
 
@@ -506,7 +507,6 @@
         if (buttonClsName == ".gos_LED") {
             console.log('buttonClsName == ".gos_LED"');
             write(dataPoint.GosDeviceWrite_LED, isChecked);
-            TextSpan.innerHTML = '开';
         }
     }
 
