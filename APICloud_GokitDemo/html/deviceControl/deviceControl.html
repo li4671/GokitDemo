@@ -69,9 +69,9 @@
     <ul>
         <li>智能灯开关状态：
             <span class="text">关</span>
-            <span class="gos_rightBlock gos_LEDBlock">
+            <!-- <span class="gos_rightBlock gos_LEDBlock">
                 <input class="ios7CBox gos_LED" type="checkbox">
-            </span>
+            </span> -->
         </li>
     </ul>
     <span style="color:#919191; font-size: 14px">*点击以下按钮，控制智能灯状态</span>
@@ -490,13 +490,11 @@
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
-            TextSpan.innerHTML = '关';
             switchImg.src = '../../image/switch-OFF.png';
 
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
-            TextSpan.innerHTML = '开';
             switchImg.src = '../../image/switch-ON.png';
         }
     }
@@ -508,6 +506,7 @@
         if (buttonClsName == ".gos_LED") {
             console.log('buttonClsName == ".gos_LED"');
             write(dataPoint.GosDeviceWrite_LED, isChecked);
+            TextSpan.innerHTML = '开';
         }
     }
 
