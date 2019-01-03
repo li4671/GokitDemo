@@ -15,10 +15,9 @@
         ul { list-style: none;  background-color: white;  margin-top: 30px;}
         ul li {border-top: 1px solid #ddd; border-bottom: 1px solid #ddd; padding-top:10px; padding-bottom: 10px;}
         
-        ul li :last-child { border-bottom: 0px; }
+        /* ul li :last-child { border-bottom: 0px; }
         ul li .ios7CBox:after {width: 18px; height: 18px; top: 3px;}
-        ul li .ios7CBox {  display: table-cell;  vertical-align: middle; 
-            height: 24px;  width: 40px; }
+        ul li .ios7CBox {  display: table-cell;  vertical-align: middle; height: 24px;  width: 40px; } */
         #LEDID{
             position:absolute;
             width: 100%;
@@ -490,13 +489,13 @@
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
-            switchImg.src = '../../image/switch-ON.png';
-            TextSpan.innerHTML = '开';
+            switchImg.src = '../../image/switch-OFF.png';
+            TextSpan.innerHTML = '关';
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
-            switchImg.src = '../../image/switch-OFF.png';
-            TextSpan.innerHTML = '关';
+            switchImg.src = '../../image/switch-ON.png';
+            TextSpan.innerHTML = '开';
         }
     }
 
@@ -518,13 +517,15 @@
         if (value) {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked") == false) {
                 $api.addCls(blockEl.querySelector(buttonClsName), "checked");
-                TextSpan.innerHTML = '关';
+                TextSpan.innerHTML = '开';
+                switchImg.src = '../../image/switch-ON.png';
 
             }
         } else {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked")) {
                 $api.removeCls(blockEl.querySelector(buttonClsName), "checked");
-                TextSpan.innerHTML = '开';
+                TextSpan.innerHTML = '关';
+                switchImg.src = '../../image/switch-OFF.png';
 
             }
         }
