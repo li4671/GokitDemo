@@ -28,6 +28,7 @@
             font-size: 20px;
             /* text-align:center; */
         }
+        /* .gos_rightBlock {  float: right;  margin-right: 5%; } */
         .gos_readonly { color: darkGray; }
         .gos_slideCellBottom { margin:3px 0; }
         .gos_slideMin { width: 12%;text-align: center;float: left; }
@@ -66,7 +67,7 @@
 <body>
     <ul>
         <li>智能灯开关状态：
-            <span class="text">关</span>
+            <span>关</span>
         </li>
     </ul>
     <div class="gos_LEDBlock" align="center" style="margin-top:40%">
@@ -482,18 +483,14 @@
     // 按钮被点击调用的方法
     function ios7CBoxDidClick(el, blockClsName) {
         var buttonClsName = "." + blockClsName.replace("Block", "");
-        var buttomText = api.dom('.text')
+
         // 渲染颜色
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
-            buttomText.innerHTML = '关';
-            // buttomImg.src = "../../image/switch-OFF.png";
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
-            buttomText.innerHTML = '开';
-            // buttomImg.src = "../../image/switch-ON.png";
         }
 
     }
