@@ -72,7 +72,7 @@
     </ul>
     <div class="gos_LEDBlock" align="center" style="margin-top:40%">
         <!-- <img src="../../image/switch-OFF.png" style="width:150px; height:150px;"> -->
-        <input class="ios7CBox gos_LED" type="image" src="../../image/switch-OFF.png" style="width:150px; height:150px;">
+        <input id="inputImg" class="ios7CBox gos_LED" type="image" src="../../image/switch-OFF.png" style="width:150px; height:150px;">
     </div>
     <!-- <span >
                 <input type="image" src="../../image/switch-OFF.png">
@@ -484,16 +484,19 @@
     function ios7CBoxDidClick(el, blockClsName) {
         var buttonClsName = "." + blockClsName.replace("Block", "");
         var TextSpan = $api.dom('.text');
+        var switchImg = $api.dom('#inputImg');
         // 渲染颜色
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
-            TextSpan.innerHTML = 'OFF';
+            TextSpan.innerHTML = '关';
+            switchImg.src = '../../image/switch-OFF.png';
 
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
-            TextSpan.innerHTML = 'ON';
+            TextSpan.innerHTML = '开';
+            switchImg.src = '../../image/switch-ON.png';
         }
     }
 
