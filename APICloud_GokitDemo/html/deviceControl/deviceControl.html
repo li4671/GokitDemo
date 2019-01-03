@@ -482,14 +482,16 @@
     // 按钮被点击调用的方法
     function ios7CBoxDidClick(el, blockClsName) {
         var buttonClsName = "." + blockClsName.replace("Block", "");
-
+        var buttomImg = api.dom('.gos_LED')
         // 渲染颜色
         if ($api.hasCls(el.querySelector(buttonClsName), "checked")) {
             updateButtonAttr(buttonClsName, false);
             $api.removeCls(el.querySelector(buttonClsName), "checked");
+            buttomImg.src = "../../image/switch-OFF.png";
         } else {
             updateButtonAttr(buttonClsName, true);
             $api.addCls(el.querySelector(buttonClsName), "checked");
+            buttomImg.src = "../../image/switch-ON.png";
         }
 
     }
@@ -512,7 +514,6 @@
         if (value) {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked") == false) {
                 $api.addCls(blockEl.querySelector(buttonClsName), "checked");
-                $api.removeCls('span','test');
             }
         } else {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked")) {
