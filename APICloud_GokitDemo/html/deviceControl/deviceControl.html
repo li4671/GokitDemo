@@ -514,14 +514,20 @@
     function updateBoolShow(blockClsName, value) {
         var blockEl = getElByClsName(blockClsName);
         var buttonClsName = "." + blockClsName.replace("Block", "");
+        var TextSpan = $api.dom('.text');
+        var switchImg = $api.dom('#inputImg');
         console.log("blockEl = " + blockEl);
         if (value) {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked") == false) {
                 $api.addCls(blockEl.querySelector(buttonClsName), "checked");
+                TextSpan.innerHTML = '关';
+
             }
         } else {
             if ($api.hasCls(blockEl.querySelector(buttonClsName), "checked")) {
                 $api.removeCls(blockEl.querySelector(buttonClsName), "checked");
+                TextSpan.innerHTML = '开';
+
             }
         }
     }
